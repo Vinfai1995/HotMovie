@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public class MainActivityFragment extends Fragment {
 
-//    创建自定义的Adapter
+//    创建Adapter
     private HotMovieAdapter movieAdapter;
 
     HotMovie[] hotMovies = {
@@ -46,7 +46,7 @@ public class MainActivityFragment extends Fragment {
         ListView listView = (ListView) rootView.findViewById(R.id.listview_movie);
         listView.setAdapter(movieAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return rootView;
     }
 
 }
