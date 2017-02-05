@@ -6,9 +6,12 @@ package com.vinfai.hotmovie;
 
 //添加一个类，设置ListView中各个Item的细节
 public class HotMovie {
-    int image;
+    private int image;
 
     public HotMovie(int image) {
         this.image = image;
+    }
+    public int getImage() {
+        return image;
     }
 }
