@@ -22,7 +22,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.fragment_detail);
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, new DetailFragment())
                 .commit();

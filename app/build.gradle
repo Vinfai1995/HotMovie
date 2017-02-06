@@ -21,6 +21,10 @@ android {
     buildTypes.each {
         it.buildConfigField 'String', 'TheMovieDb_Key', MyApiKey
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {

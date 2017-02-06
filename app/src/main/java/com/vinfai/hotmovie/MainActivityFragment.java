@@ -200,9 +200,10 @@ public class MainActivityFragment extends android.app.Fragment {
             JSONArray resultArray = movieData.getJSONArray("results");
 
             String[][] resultStrs = new String[resultArray.length()][5];
+            final String posterSize = "185";
 
             for (int i = 0; i < resultArray.length(); i++) {
-                String posterPath = "http://image.tmdb.org/t/p/w/185";
+                String posterPath = "http://image.tmdb.org/t/p/w" + posterSize;
                 JSONObject movieDataInfo = resultArray.getJSONObject(i);
                 posterPath += movieDataInfo.getString("poster_path");
                 resultStrs[i][0] = posterPath;
