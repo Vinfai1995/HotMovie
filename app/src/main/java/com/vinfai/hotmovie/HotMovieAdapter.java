@@ -15,14 +15,14 @@ import java.util.ArrayList;
  * Created by 12045 on 2017/2/4.
  */
 
-public class HotMovieAdapter extends ArrayAdapter<String> {
+public class HotMovieAdapter extends ArrayAdapter<MovieData> {
 
 //    创建日志标签
     private static String LOG_TAG = HotMovieAdapter.class.getSimpleName();
 
     public HotMovieAdapter( Activity context,
-                            ArrayList<String> hotMovies) {
-        super(context, 0, hotMovies);
+                            ArrayList<MovieData> movieDatas) {
+        super(context, 0, movieDatas);
     }
 
 
@@ -37,12 +37,12 @@ public class HotMovieAdapter extends ArrayAdapter<String> {
         }
 
 //        获取Item位置
-        String posterUri = getItem(position);
+        MovieData movieData = getItem(position);
 
 //        获取图片资源并填充到布局文件中
         ImageView posterView = (ImageView) convertView
-                .findViewById(R.id.image_item);
-        loadPoster(posterUri, posterView);
+                .findViewById(R.id.imageview_poster);
+        loadPoster(movieData.getPosterUri(), posterView);
 
         return convertView;
     }
