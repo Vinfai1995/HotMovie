@@ -109,6 +109,8 @@ public class MainActivityFragment extends android.app.Fragment {
         getMovieData.execute();
     }
 
+
+//    参考自Udacity的Sunshine项目
     public class RefreshDataMenu extends AsyncTask<Void, Void, String[][]> {
 
         private String LOG_TAG = RefreshDataMenu.class.getSimpleName();
@@ -198,10 +200,9 @@ public class MainActivityFragment extends android.app.Fragment {
             JSONArray resultArray = movieData.getJSONArray("results");
 
             String[][] resultStrs = new String[resultArray.length()][5];
-            String posterSize = "185";
 
             for (int i = 0; i < resultArray.length(); i++) {
-                String posterPath = "http://image.tmdb.org/t/p/w" + posterSize;
+                String posterPath = "http://image.tmdb.org/t/p/w/185";
                 JSONObject movieDataInfo = resultArray.getJSONObject(i);
                 posterPath += movieDataInfo.getString("poster_path");
                 resultStrs[i][0] = posterPath;
@@ -223,7 +224,9 @@ public class MainActivityFragment extends android.app.Fragment {
                 resultStrs[i][4] = releaseDate;
             }
 
-            Log.d("数据预览", resultStrs[0][0] + " + " + "电影名称" + resultStrs[0][1] + "剧情简介" + resultStrs[0][2] + "用户评分" + resultStrs[0][3] + "发布时间" + resultStrs[0][4]);
+            Log.d("数据预览", resultStrs[0][0] + " + "
+                    + "电影名称" + resultStrs[0][1] + "剧情简介" + resultStrs[0][2]
+                    + "用户评分" + resultStrs[0][3] + "发布时间" + resultStrs[0][4]);
             return resultStrs;
         }
 
